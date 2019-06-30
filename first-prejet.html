@@ -9,7 +9,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=ABeeZee|Cuprum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Princess+Sofia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="my_style.css">
     <script src="https://kit.fontawesome.com/9f680bdea2.js"></script>
     <title>La galerie d'art de Rembrandt</title>
 </head>
@@ -22,12 +23,40 @@
             <h4 class="text-white">painter, draughtsan &amp; printmaker</h4>
         </aside>
     </section>
+    <style>
+        #s1_header {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+        }
+
+        #s1_header aside {
+            text-align: center;
+            grid-column: 2 / 4;
+            grid-row: 4 / 5;
+        }
+
+        @media (min-width : 992px) {
+            #s1-header {
+                height: 50vh;
+            }
+
+            #s1-header .display-4 {
+                font-size: 28px;
+            }
+
+            #s1-header h4 {
+                font-size: 12px;
+            }
+        }
+
+    </style>
+
     <!--s2_trio -->
     <section id="s2-trio">
-        <div class="container py-5">
-
+        <div class="container py-5 mygrid">
             <div class="card mx-2">
-                <div class="card-body">
+                <div class="card-body mysubgrid">
                     <img class="img-fluid border border-dark" src="wed/zozor.png" alt="Prints" />
                     <aside>
                         <h2 class="text-danger my-2">Prints</h2>
@@ -42,7 +71,7 @@
             </div>
 
             <div class="card mx-2">
-                <div class="card-body">
+                <div class="card-body mysubgrid">
                     <img class="img-fluid border border-dark" src="wed/anwer.png" alt="Paintings" />
                     <aside>
                         <h2 class="text-danger my-2">Paintings</h2>
@@ -57,7 +86,7 @@
             </div>
 
             <div class="card mx-2">
-                <div class="card-body">
+                <div class="card-body mysubgrid">
                     <img class="img-fluid border border-dark" src="wed/zozor_logo.png" alt="Drawings" />
                     <aside>
                         <h2 class="text-danger my-2">Drawings</h2>
@@ -83,25 +112,36 @@
     </section>
     <!--s4_about -->
     <section class="py-5" id="s4_about">
-        <div class="container">
-            <img class="img-fluid" src="wed/rembrandt-autoportrait-beret.jpg" alt="Rembrandt Van Rijn" />
-            <h2 class="text-danger">about</h2>
-            <p><strong> Rembrandt Harmenszoon van Rijn</strong> (en néerlandais Écouter1), habituellement désigné sous
-                son
-                seul prénom de Rembrandt, né à
-                Leyde le 15 juillet 1606 ou 1607note 2 et mort à Amsterdam le 4 octobre 1669, est généralement considéré
-                comme l'un des
-                plus grands peintres de l'histoire de la peinture, notamment de la peinture baroque, et l'un des plus
-                importants
-                peintres de l'École hollandaise du XVIIe siècle. Rembrandt a également réalisé des gravures et des
-                dessins
-                et est l'un
-                des plus importants aquafortistes de l'histoire. Il a vécu pendant ce que les historiens appellent le
-                siècle
-                d'or
-                néerlandais (approximativement le XVIIe siècle), durant lequel culture, sciences, commerce et influence
-                politique des
-                Pays-Bas ont atteint leur apogée.</p>
+        <div class="container py-5 s4-about-grid">
+            <div class="img-seltfportrait">
+                <img class="img-fluid" src="wed/rembrandt-autoportrait-beret.jpg" alt="Rembrandt Van Rijn" />
+            </div>
+            <div class="hd-about">
+                <h2 class="text-danger">about</h2>
+            </div>
+            <div class="txt-about">
+                <p><strong> Rembrandt Harmenszoon van Rijn</strong> (en néerlandais Écouter1), habituellement désigné
+                    sous
+                    son
+                    seul prénom de Rembrandt, né à
+                    Leyde le 15 juillet 1606 ou 1607note 2 et mort à Amsterdam le 4 octobre 1669, est généralement
+                    considéré
+                    comme l'un des
+                    plus grands peintres de l'histoire de la peinture, notamment de la peinture baroque, et l'un des
+                    plus
+                    importants
+                    peintres de l'École hollandaise du XVIIe siècle. Rembrandt a également réalisé des gravures et des
+                    dessins
+                    et est l'un
+                    des plus importants aquafortistes de l'histoire. Il a vécu pendant ce que les historiens appellent
+                    le
+                    siècle
+                    d'or
+                    néerlandais (approximativement le XVIIe siècle), durant lequel culture, sciences, commerce et
+                    influence
+                    politique des
+                    Pays-Bas ont atteint leur apogée.</p>
+            </div>
         </div>
     </section>
     <!--s5_prints -->
@@ -138,51 +178,48 @@
     <!--s9_footer -->
     <section class="py-5 text-white" id="s9_footer">
         <div class="container">
-    </section>
-
-    <section class="text-white py-5" id="s10_copyright">
-        <aside>
-            <h1 class="text-danger h3">Galerie de Rembrandt</h1>
-            <p>Samedi: 13:00 - 18:00<br />
-                Veniam nostrud non et labore dolor.<br />
-                Excepteur eu dolore dolore aliqua qui sit irure commodo elit veniam.
-            </p>
-            <i class=" fab fa-facebook-f"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-linkedin-in"></i>
-            <i class="fab fa-instagram"></i>
-        </aside>
-        <aside>
-            <h1 class="text-danger h3">kllllljk</h1>
-            <ul class="list-unstyled">
-                <li>xxx</li>
-                <li>xxx</li>
-                <li>xxxxxx</li>
-                <li>xxxxx</li>
-            </ul>
-        </aside>
-        <aside>
-            <h1 class="text-danger h3">jkkkkkkkk</h1>
-            <ul class="list-unstyled">
-                <li>xxx</li>
-                <li>xxx</li>
-                <li>xxxxxx</li>
-                <li>xxxxx</li>
-            </ul>
-        </aside>
-        <aside>
-            <h1 class="text-danger h3">Paintings names</h1>
-            <ul class="list-unstyled">
-                <li>xxx</li>
-                <li>xxx</li>
-                <li>xxxxxx</li>
-                <li>xxxxx</li>
-            </ul>
-        </aside>
+            <aside>
+                <h1 class="text-danger h3">Galerie de Rembrandt</h1>
+                <p>Samedi: 13:00 - 18:00<br />
+                    Veniam nostrud non et labore dolor.<br />
+                    Excepteur eu dolore dolore aliqua qui sit irure commodo elit veniam.
+                </p>
+                <i class=" fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-linkedin-in"></i>
+                <i class="fab fa-instagram"></i>
+            </aside>
+            <aside>
+                <h1 class="text-danger h3">kllllljk</h1>
+                <ul class="list-unstyled">
+                    <li>xxx</li>
+                    <li>xxx</li>
+                    <li>xxxxxx</li>
+                    <li>xxxxx</li>
+                </ul>
+            </aside>
+            <aside>
+                <h1 class="text-danger h3">jkkkkkkkk</h1>
+                <ul class="list-unstyled">
+                    <li>xxx</li>
+                    <li>xxx</li>
+                    <li>xxxxxx</li>
+                    <li>xxxxx</li>
+                </ul>
+            </aside>
+            <aside>
+                <h1 class="text-danger h3">Paintings names</h1>
+                <ul class="list-unstyled">
+                    <li>xxx</li>
+                    <li>xxx</li>
+                    <li>xxxxxx</li>
+                    <li>xxxxx</li>
+                </ul>
+            </aside>
         </div>
     </section>
     <!--s10_copyright -->
-    <section id="s10_copyright" class="text-white bg-dark small my-5 tex-center">
+    <section id="s10_copyright" class="text-white bg-dark small my-5 text-center">
         <P>&COPY;
             <SCript> document.write(new date().getFullYear()); </SCript> whatever, all rights reserved</P>
     </section>
