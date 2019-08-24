@@ -42,7 +42,7 @@ class JokeController{
     public function delete() 
     {
         $this->jokesTable->delete($_POST['idjoke']);
-        header('location:index.php?route=joke/list');
+        header('location:/joke/list');
     }
     public function edit() 
     {
@@ -52,7 +52,7 @@ class JokeController{
             $joke['jokedate'] = new DateTime();
             $joke['authorId'] = 1;
             $this->jokesTable->save($joke);
-            header('location: index.php?route=joke/list');
+            header('location: /joke/list');
         }
         else 
         {

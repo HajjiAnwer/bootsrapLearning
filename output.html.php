@@ -15,12 +15,12 @@ foreach ($jokes as $joke): ?>
            (by <a href="mailto:<?php echo htmlspecialchars($joke['email'], ENT_QUOTES,'UTF-8'); ?>">
            <?php echo htmlspecialchars($joke['name'], ENT_QUOTES,'UTF-8'); ?>
                </a>)
-            <a href="index.php?action=edit&id=<?=$joke['idjoke']?>">Edit</a>   
+            <a href="/joke/edit?idjoke=<?=$joke['idjoke']?>">Edit</a>   
             <i class="fas fa-smile" style="font-size:30px;color:yellow;text-shadow:2px 2px 4px #000000;"></i>
             <i class="fas fa-smile" style="font-size:30px;color:yellow;text-shadow:2px 2px 4px #000000;"></i>
         </div>
         <div class="col-sm-4 text-right">      
-        <form action="index.php?action=delete"  method="post">
+        <form action="/joke/delete"  method="post">
                 <input type="hidden" name="idjoke" value="<?=$joke['idjoke']?>">
                 <input type="submit" value="Delete" class="bg-primary  rounded border-primary">
             </form>

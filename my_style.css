@@ -1,0 +1,300 @@
+.text-danger {
+    font-family: 'Princess Sofia', cursive;
+    color: #e5904d !important;
+    text-shadow: 1px 1px black;
+}
+
+#s1_header {
+    background: #1e1109
+}
+
+#s2-trio {
+    background: #fefaf7
+}
+
+#s3_painting_of_the_week {
+    background: #26221f
+}
+
+#s4_about {
+    background: #f0e9d7
+}
+
+#s5_prints {
+    background: #fefaf7
+}
+
+#s8_contact {
+    background: #ccc6c1
+}
+
+#s9_footer {
+    background: #414046
+}
+
+#s10_copyright {
+    background: #000
+}
+
+#s1_header {
+    background: #1e1109
+}
+
+/* ---------- #s1-header ---------*/
+#s1_header {
+    background: url("wed/rembrandt-autoportrait-beret.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+/* ---------- #s2-trio  ---------*/
+.mygrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+}
+
+@media (max-width:768px) {
+    .mygrid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 10px;
+    }
+
+    .mysubgrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-gap: 15px;
+    }
+}
+
+@media (max-width:576px) {
+    .mygrid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+
+    .mysubgrid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, auto);
+    }
+
+}
+
+/* ---------- #s3_painting_of_the_week ---------*/
+/* ---------- #s4_about  ---------*/
+.s4-about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 10px;
+    grid-template-areas:
+        "img-seltfportrait img-selfportrait img-selfportrait"
+        "hd-about hd-about hd-about"
+        "txt-about txt-about txt-about"
+    ;
+}
+
+.img-seltfportrait {
+    grid-area: img-seltfportrait;
+    grid-column: 2/3;
+}
+
+.hd-about {
+    grid-area: hd-about;
+    text-align: center;
+}
+
+.txt-about {
+    grid-area: txt-about;
+    line-height: 2;
+}
+
+@media(min-width:768px) {
+    .s4-about-grid {
+        grid-template-areas:
+            "img-seltfportrait hd-about hd-about"
+            "img-seltfportrait txt-about txt-about"
+            "img-seltfportrait txt-about txt-about"
+        ;
+    }
+
+    .img-seltfportrait {
+        grid-column: 1/2;
+    }
+
+    .hd-about {
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .txt-about {
+        padding-left: 20px;
+    }
+}
+
+/* ---------- #s5_prints  ---------*/
+.my-img {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
+    justify-items: center;
+}
+
+.my-img img {
+    display: block;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.my-img .my-bk-img {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+/* ---------- #s8_contact ---------*/
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-template:
+        "contact-copy contact-map contact-map"
+        "contact-img contact-map contact-map"
+    ;
+}
+
+.contact-copy {
+    grid-area: contact-copy;
+}
+
+.contact-map {
+    grid-area: contact-map;
+}
+
+.conatct-img {
+    grid-area: contact-img;
+}
+
+@media (max-width:768px) {
+    .contact-grid {
+        grid-template-columns: repeat(2, auto);
+        grid-auto-rows: repeat(3, auto);
+        grid-template:
+            "contact-img contact-copy"
+            "contact-map contact-map"
+            "contact-map contact-map"
+        ;
+    }
+
+    .conatct-img {
+        justify-self: end;
+    }
+}
+
+@media (max-width:576px) {
+    .contact-grid {
+        grid-template-columns: auto;
+        grid-auto-rows: repeat(4, auto);
+        grid-template:
+            "contact-img"
+            "contact-copy"
+            "contact-map"
+            "contact-map"
+        ;
+    }
+
+    .conatct-img {
+        justify-self: center;
+        transform: scaleX(-1);
+    }
+
+    .contact-copy {
+        text-align: center;
+    }
+}
+
+/* ---------- #s9_footer ---------*/
+.s9-footer-grid {
+    font-size: small;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, auto);
+    grid-gap: 10px;
+    grid-template-areas:
+        "footer-hour"
+        "footer-kll"
+        "footer-jkk"
+        "footer-pain"
+        "footer-other"
+        "footer-img"
+    ;
+}
+
+/*.footer-jkk h1 {
+    text-align: center;
+}*/
+
+.footer-jkk,
+.footer-other {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.footer-img {
+    width: 50%;
+    justify-self: flex-end;
+}
+
+.footer-hour {
+    text-align: left;
+}
+
+@media (max-width: 767px) {
+
+    .footer-kll,
+    .footer-jkk,
+    .footer-pain,
+    .footer-other {
+        border-top: 1px dashed black;
+        padding-top: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .footer-img {
+        transform: scaleX(-1);
+    }
+
+    .footer-hour {
+        text-align: center;
+    }
+}
+
+@media (min-width:768px) {
+    .s9-footer-grid {
+        font-size: initial;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "footer-hour footer-img"
+            "footer-kll footer-jkk"
+            "footer-pain footer-other"
+        ;
+    }
+
+    .footer-jkk,
+    .footer-other,
+    .footer-other h1 {
+        flex: none;
+        padding-top: 0;
+        text-align: left;
+    }
+
+}
+
+/* ---------- #s10_copyright ---------*/
